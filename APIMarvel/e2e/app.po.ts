@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class ProyectoPage {
+export class APIMarvelPage {
   navigateTo() {
     return browser.get('/');
   }

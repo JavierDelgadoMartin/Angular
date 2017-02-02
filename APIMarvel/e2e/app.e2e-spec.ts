@@ -1,10 +1,10 @@
-import { ProyectoPage } from './app.po';
+import { APIMarvelPage } from './app.po';
 
-describe('proyecto App', function() {
-  let page: ProyectoPage;
+describe('apimarvel App', function() {
+  let page: APIMarvelPage;
 
   beforeEach(() => {
-    page = new ProyectoPage();
+    page = new APIMarvelPage();
   });
 
   it('should display message saying app works', () => {

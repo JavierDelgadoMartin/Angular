@@ -9,6 +9,8 @@ import { PersonajesComponent } from './personajes/personajes.component';
 import { SeriesComponent } from './series/series.component';
 import { ComicsComponent } from './comics/comics.component';
 import { PieComponent } from './pie/pie.component';
+import { MenuComponent } from './menu/menu.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,15 @@ import { PieComponent } from './pie/pie.component';
     PersonajesComponent,
     SeriesComponent,
     ComicsComponent,
-    PieComponent
+    PieComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

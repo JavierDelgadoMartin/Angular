@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from "../api.service";
+import {ComicsService} from "../comics.service";
 
 @Component({
   selector: 'app-comics',
@@ -8,10 +8,10 @@ import {ApiService} from "../api.service";
 })
 export class ComicsComponent implements OnInit {
   listaComics;
-  constructor(private api:ApiService) { }
+  constructor(private api:ComicsService) { }
 
   ngOnInit() {
-    this.api.obtenerComics("/v1/public/comics").subscribe(
+    this.api.obtenerComics().subscribe(
       data => {this.listaComics = data;console.log(this.listaComics)});
   }
   cambiarOffset(){

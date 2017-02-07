@@ -6,14 +6,11 @@ import {PersonajesService} from "../personajes.service";
   styleUrls: ['./personajes.component.css']
 })
 export class PersonajesComponent implements OnInit {
-  private listaPersonajes;
-
+  listaPersonajes;
   constructor(private api:PersonajesService) { }
 
   ngOnInit() {
-    /*this.api.obtenerComics("/v1/public/comics").subscribe(
+    this.api.obtenerPersonajes().subscribe(
       data => {this.listaPersonajes = data;console.log(this.listaPersonajes)});
-      */
   }
-
 }

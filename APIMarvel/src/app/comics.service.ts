@@ -18,7 +18,7 @@ export class ComicsService {
   comics(){
     let hash = Md5.hashStr(1+this.privatek+this.publick);
     let enlace = "http://gateway.marvel.com/v1/public/comics?ts=1&apikey="
-     + this.publick + "&hash=" + hash+"&offset="+this.offset + "&limit=100";
+    + this.publick + "&hash=" + hash+"&offset="+this.offset+"&limit=100&titleStartsWith=a";
     this.ajax.get(enlace)
       .map(response => response.json())
       .subscribe( data => this.listaComics.next(data.data.results),
@@ -34,7 +34,5 @@ export class ComicsService {
 
   cambiaOffset(newOffset){
     this.offset += newOffset;
-    console.log(this.offset);
-    this.comics();
   }
 }

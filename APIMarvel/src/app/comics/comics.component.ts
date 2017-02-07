@@ -14,7 +14,7 @@ export class ComicsComponent implements OnInit {
     this.api.obtenerComics().subscribe(
       data => {this.listaComics = data;console.log(this.listaComics)});
   }
-  cambiarOffset(){
-    this.api.cambiaOffset(20);
+  sumarOffset(){
+    this.api.cambiaOffset(100);
   }
 }

@@ -6,13 +6,12 @@ import {PersonajesService} from "../personajes.service";
   templateUrl: './personajes.component.html',
   styleUrls: ['./personajes.component.css']
 })
-
 export class PersonajesComponent implements OnInit {
-  private listaPersonajes;
+  private listaPersonajes = [];
 
   constructor(private api:PersonajesService) { }
 
   ngOnInit() {
-    this.api.obtenerPersonajes().subscribe(data => {this.listaPersonajes = data});
+      this.api.obtenerPersonajes().subscribe(data => {this.listaPersonajes = data;});
   }
 }

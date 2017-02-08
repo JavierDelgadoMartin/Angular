@@ -4,11 +4,11 @@ import {PersonajesService} from "../personajes.service";
 
 @Component({
   selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  templateUrl: './detallePersonaje.component.html',
+  styleUrls: ['./detallePersonaje.component.css']
 })
 
-export class ItemComponent implements OnInit {
+export class DetallePersonajeComponent implements OnInit {
   private id;
   private listaP;
   private personaje:any;

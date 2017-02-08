@@ -16,10 +16,10 @@ export class PersonajesService {
   personajes(){
     let hash = Md5.hashStr(1+this.privatek+this.publick);
     let enlace = "http://gateway.marvel.com/v1/public/characters?ts=1&apikey="
-    + this.publick + "&hash=" + hash+"&offset="+this.offset+"&limit=100";
+    + this.publick + "&hash=" + hash+"&offset="+this.offset+"&limit=10";
     this.ajax.get(enlace)
       .map(response => response.json())
-      .subscribe( data => this.listaPersonajes.next(data.data.results),
+      .subscribe( data => {this.listaPersonajes.next(data.data.results)},
                   error=> console.log(error)
     );
   }

@@ -17,6 +17,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import {PersonajesService} from "./personajes.service";
 import {SeriesService} from "./series.service";
 import { ItemComponent } from './item/item.component';
+import { FiltroPipe } from './filtro.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: PrincipalComponent },
@@ -39,7 +40,8 @@ export const routing = RouterModule.forRoot(appRoutes);
     MenuComponent,
     PrincipalComponent,
     PersonajesComponent,
-    ItemComponent
+    ItemComponent,
+    FiltroPipe
   ],
   imports: [
     routing,

@@ -14,12 +14,16 @@ import { MenuComponent } from './menu/menu.component';
 import { ComicsService } from './comics.service';
 import { AlertModule } from 'ng2-bootstrap';
 import { PrincipalComponent } from './principal/principal.component';
+import {PersonajesService} from "./personajes.service";
+import {SeriesService} from "./series.service";
+import { ItemComponent } from './item/item.component';
 
 const appRoutes: Routes = [
   { path: '', component: PrincipalComponent },
   {path: "personajes", component: PersonajesComponent},
   {path: "series", component: SeriesComponent},
-  {path: "comics", component: ComicsComponent}
+  {path: "comics", component: ComicsComponent},
+  {path: "item/:id", component: ItemComponent}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
@@ -33,7 +37,9 @@ export const routing = RouterModule.forRoot(appRoutes);
     ComicsComponent,
     PieComponent,
     MenuComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    PersonajesComponent,
+    ItemComponent
   ],
   imports: [
     routing,
@@ -42,7 +48,7 @@ export const routing = RouterModule.forRoot(appRoutes);
     HttpModule,
     AlertModule.forRoot()
   ],
-  providers: [ComicsService],
+  providers: [ComicsService,PersonajesService,SeriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@ import {ComicsService} from "../comics.service";
   styleUrls: ['./comics.component.css']
 })
 export class ComicsComponent implements OnInit {
-  listaComics;
+  private listaComics;
   constructor(private api:ComicsService) { }
 
   ngOnInit() {

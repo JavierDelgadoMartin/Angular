@@ -6,15 +6,20 @@ import {ComicsService} from "../comics.service";
   templateUrl: './comics.component.html',
   styleUrls: ['./comics.component.css']
 })
+
 export class ComicsComponent implements OnInit {
   private listaComics;
-  constructor(private api:ComicsService) { }
+  constructor(private servicio:ComicsService) { }
 
   ngOnInit() {
-    this.api.obtenerComics().subscribe(
-      data => {this.listaComics = data;console.log(this.listaComics)});
+    this.servicio.obtenerComics().subscribe(
+      data => {this.listaComics = data;});
   }
-  sumarOffset(){
-    this.api.cambiaOffset(100);
+  cargarDetalle(id){
+    for(let i of this.listaComics){
+        if(i.id == id){
+          this.servicio.cargarDetalle(i);
+        }
+    }
   }
 }

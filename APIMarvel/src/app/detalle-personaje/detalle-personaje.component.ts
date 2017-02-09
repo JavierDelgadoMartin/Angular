@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import {PersonajesService} from "../personajes.service";
 
 @Component({
@@ -10,11 +9,9 @@ import {PersonajesService} from "../personajes.service";
 
 export class DetallePersonajeComponent implements OnInit {
   private personaje;
-  constructor(private route: ActivatedRoute,private servicio:PersonajesService) { }
+  constructor(private servicio:PersonajesService) { }
 
   ngOnInit() {
-    //this.route.params.subscribe(params => {this.personaje = params['personaje']});  
     this.personaje = this.servicio.obtenerPersonaje;
-    console.log(this.personaje);
   }
 }

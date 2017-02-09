@@ -1,6 +1,14 @@
 <h1>{{personaje.name}}</h1>
 <img src="{{personaje.thumbnail.path}}.{{personaje.thumbnail.extension}}">
-    <div>
-        <a></a>
-    </div>
-
+<h4>Historias</h4>
+<ul>
+    <li *ngFor="let story of personaje.stories.items">
+        <a href="{{story.resourceURI}}">{{story.name}}</a>
+    </li>
+</ul>
+<h4>Series</h4>
+<ul>
+    <li *ngFor="let serie of personaje.series.items">
+        <a href="{{serie.resourceURI}}">{{serie.name}}</a>
+    </li>
+</ul>

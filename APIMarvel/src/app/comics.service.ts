@@ -11,6 +11,7 @@ export class ComicsService {
   private listaComics: Subject<any> = new Subject<any>();
   private offset = 0;
   private filtro="a";
+  private comic;
 
   constructor(private ajax:Http) {
 
@@ -33,7 +34,12 @@ export class ComicsService {
     return this.listaComics.asObservable();
   }
 
-  cambiaOffset(newOffset){
-    this.offset += newOffset;
+  
+  cargarDetalle(comic){
+    this.comic = comic;
+  }
+
+  get obtenercomic(){
+    return this.comic;
   }
 }

@@ -28,8 +28,8 @@ const appRoutes: Routes = [
   {path: "series", component: SeriesComponent},
   {path: "comics", component: ComicsComponent},
   {path: "detalleP", component: DetallePersonajeComponent},
-  {path: "detalleC/:comic",component:DetalleComicComponent},
-  {path: "detalleS/:serie",component:DetalleSerieComponent}
+  {path: "detalleC",component:DetalleComicComponent},
+  {path: "detalleS",component:DetalleSerieComponent}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

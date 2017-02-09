@@ -1,3 +1,15 @@
-<p>
-  detalle-comic works!
-</p>
+<h1>{{comic.title}}</h1>
+<img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
+<p>{{comic.description}}</p>
+<h4>Historias</h4>
+<ul>
+    <li *ngFor="let story of comic.stories.items">
+        <a href="{{story.resourceURI}}">{{story.name}}</a>
+    </li>
+</ul>
+<h4>Serie</h4>
+<ul>
+    <li>
+        <a href="{{comic.series.resourceURI}}">{{comic.series.name}}</a>
+    </li>
+</ul>

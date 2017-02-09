@@ -2,10 +2,13 @@
     <input type="text">
     <button >Buscar</button>
 </div>
-
 <div class="container">
   <div *ngFor="let comic of listaComics">
     <div class="card-title"><p>{{comic.title}}</p></div>
-    <div><img class="card-image" src={{comic.thumbnail.path}}.{{comic.thumbnail.extension}}></div>
+      <div RouterLinkActive="active">
+        <a routerLink="/item/{{personaje.id}}">
+          <img class="card-image" src={{comic.thumbnail.path}}.{{comic.thumbnail.extension}}>
+        </a>
+      </div>
   </div>
 </div>

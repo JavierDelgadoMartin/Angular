@@ -7,11 +7,23 @@ import {PersonajesService} from "../personajes.service";
   styleUrls: ['./personajes.component.css']
 })
 export class PersonajesComponent implements OnInit {
-  private listaPersonajes = [];
+  private listaPersonajes;
 
-  constructor(private api:PersonajesService) { }
+  constructor(private servicio:PersonajesService) { }
 
   ngOnInit() {
-      this.api.obtenerPersonajes().subscribe(data => {this.listaPersonajes = data;});
+      this.servicio.obtenerPersonajes().subscribe(data => {this.listaPersonajes = data;});
+  }
+
+  cargarDetalle(id){
+    for(let i of this.listaPersonajes){
+        if(i.id == id){
+          this.servicio.cargarDetalle(i);
+        }
+    }
+  }
+
+  onScroll(event){
+    console.log(event);
   }
 }

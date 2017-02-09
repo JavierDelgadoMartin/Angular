@@ -10,6 +10,7 @@ export class PersonajesService {
   private privatek = "ff05df04fcf7d322f4963c15c1fbc0925f47a091";
   private listaPersonajes: Subject<any> = new Subject<any>();
   private offset = 0;
+  private personaje;
 
   constructor(private ajax:Http) { }
   
@@ -27,5 +28,13 @@ export class PersonajesService {
   obtenerPersonajes(): Observable<any>{
     this.personajes();
     return this.listaPersonajes.asObservable();
+  }
+
+  cargarDetalle(personaje){
+    this.personaje = personaje;
+  }
+
+  get obtenerPersonaje(){
+    return this.personaje;
   }
 }

@@ -16,7 +16,7 @@ import { AlertModule } from 'ng2-bootstrap';
 import { PrincipalComponent } from './principal/principal.component';
 import {PersonajesService} from "./personajes.service";
 import {SeriesService} from "./series.service";
-import { DetallePersonajeComponent} from './detallePersonaje/detallePersonaje.component';
+import { DetallePersonajeComponent} from './detalle-personaje/detalle-personaje.component';
 import { FiltroPipe } from './filtro.pipe';
 import { DetalleComicComponent } from './detalle-comic/detalle-comic.component';
 import { DetalleSerieComponent } from './detalle-serie/detalle-serie.component';
@@ -27,7 +27,9 @@ const appRoutes: Routes = [
   {path: "personajes", component: PersonajesComponent},
   {path: "series", component: SeriesComponent},
   {path: "comics", component: ComicsComponent},
-  {path: "item/:id", component: DetallePersonajeComponent}
+  {path: "detalleP", component: DetallePersonajeComponent},
+  {path: "detalleC/:comic",component:DetalleComicComponent},
+  {path: "detalleS/:serie",component:DetalleSerieComponent}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

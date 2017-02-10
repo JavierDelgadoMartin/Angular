@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PersonajesService} from "../personajes.service";
+import {AjaxService} from "../ajax.service";
 
 @Component({
   selector: 'app-personajes',
@@ -8,22 +8,12 @@ import {PersonajesService} from "../personajes.service";
 })
 export class PersonajesComponent implements OnInit {
   private listaPersonajes;
+  private link = "/v1/public/characters";
 
-  constructor(private servicio:PersonajesService) { }
+  constructor(private servicio:AjaxService) { }
 
   ngOnInit() {
-      this.servicio.obtenerPersonajes().subscribe(data => {this.listaPersonajes = data;});
-  }
-
-  cargarDetalle(id){
-    for(let i of this.listaPersonajes){
-        if(i.id == id){
-          this.servicio.cargarDetalle(i);
-        }
-    }
-  }
-
-  onScroll(event){
-    console.log(event);
+      this.servicio.obtenerListaDatos(this.link).subscribe(data => {this.listaPersonajes = data;});
   }
 }
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ComicsService} from "../comics.service";
+import {AjaxService} from "../ajax.service";
+import { ActivatedRoute } from '@angular/router'; 
+
 @Component({
   selector: 'app-detalle-comic',
   templateUrl: './detalle-comic.component.html',
@@ -7,11 +9,11 @@ import {ComicsService} from "../comics.service";
 })
 export class DetalleComicComponent implements OnInit {
   private comic;
-
-  constructor(private servicio:ComicsService) { }
+  private id;
+  constructor(private servicio:AjaxService,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.comic = this.servicio.obtenercomic;
+    this.route.params.subscribe(params => {this.id = params['id']});
+    this.comic = this.servicio.obtenerDato(this.id);
   }
-
 }

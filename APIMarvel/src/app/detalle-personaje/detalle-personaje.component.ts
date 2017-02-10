@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PersonajesService} from "../personajes.service";
+import {AjaxService} from "../ajax.service";
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-detalle-personaje',
@@ -9,9 +10,13 @@ import {PersonajesService} from "../personajes.service";
 
 export class DetallePersonajeComponent implements OnInit {
   private personaje;
-  constructor(private servicio:PersonajesService) { }
+  private id;
+
+  constructor(private servicio:AjaxService,private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.personaje = this.servicio.obtenerPersonaje;
+    console.log("mojon");
+    this.route.params.subscribe(params => {this.id = params['id']});
+    this.personaje = this.servicio.obtenerDato(this.id);
   }
 }

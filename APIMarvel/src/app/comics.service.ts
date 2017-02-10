@@ -28,6 +28,10 @@ export class ComicsService {
                   ()=>console.log("fin")
     );
   }
+  buscarComic(nombre){
+    console.log(nombre);
+    this.filtro = nombre;
+  }
 
   obtenerComics(){
     this.comics();

@@ -1,0 +1,9 @@
+<div>
+  <h1>{{evento.title}}</h1>
+  <img class="card-image" src={{evento.thumbnail.path}}.{{evento.thumbnail.extension}}>
+  <p>{{evento.description}}</p>
+  <h4>Comics</h4>
+  <ul>
+    <li *ngFor="let comic of evento.comics.items;let i=index"> {{comic.name}}</li>
+  </ul>
+</div>

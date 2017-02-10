@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ComicsService} from "../comics.service";
+import {AjaxService} from "../ajax.service";
 
 @Component({
   selector: 'app-comics',
@@ -9,17 +9,11 @@ import {ComicsService} from "../comics.service";
 
 export class ComicsComponent implements OnInit {
   private listaComics;
-  constructor(private servicio:ComicsService) { }
+  private link = "/v1/public/comics";
+
+  constructor(private servicio:AjaxService) { }
 
   ngOnInit() {
-    this.servicio.obtenerComics().subscribe(
-      data => {this.listaComics = data;});
-  }
-  cargarDetalle(id){
-    for(let i of this.listaComics){
-        if(i.id == id){
-          this.servicio.cargarDetalle(i);
-        }
-    }
+    this.servicio.obtenerListaDatos(this.link).subscribe(data => {this.listaComics = data});
   }
 }

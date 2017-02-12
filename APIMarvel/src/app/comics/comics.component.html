@@ -1,7 +1,7 @@
-<div class="container">
+<div class="principal container">
   <div *ngFor="let comics of listaComics">
     <div *ngFor="let comic of comics">
-      <div RouterLinkActive="active">
+      <div RouterLinkActive="active"  class="well well-sm">
         <a routerLink="/detalleC/{{comic.id}}">{{comic.title}}</a>
       </div>
   </div>

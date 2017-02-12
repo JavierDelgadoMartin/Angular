@@ -1,6 +1,6 @@
-<div class="container">
+<div class="principal container">
   <div *ngFor="let eventos of listaEventos;">
-    <div *ngFor="let evento of eventos;">
+    <div *ngFor="let evento of eventos;" class="well well-sm">
       <div RouterLinkActive="active">
         <a routerLink='/detalleE/{{evento.id}}'>{{evento.title}}</a>
       </div>

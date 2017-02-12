@@ -13,7 +13,6 @@ import { MenuComponent } from './menu/menu.component';
 import { AlertModule } from 'ng2-bootstrap';
 import { PrincipalComponent } from './principal/principal.component';
 import { DetallePersonajeComponent} from './detalle-personaje/detalle-personaje.component';
-import { FiltroPipe } from './filtro.pipe';
 import { DetalleComicComponent } from './detalle-comic/detalle-comic.component';
 import { EventoComponent } from './evento/evento.component';
 import { DetalleEventoComponent } from './detalle-evento/detalle-evento.component';
@@ -43,7 +42,6 @@ export const routing = RouterModule.forRoot(appRoutes);
     PrincipalComponent,
     PersonajesComponent,
     DetallePersonajeComponent,
-    FiltroPipe,
     DetalleComicComponent,
     EventoComponent,
     DetalleEventoComponent

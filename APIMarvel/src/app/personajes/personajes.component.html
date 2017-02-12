@@ -1,5 +1,5 @@
-<div class="principal">
-<div *ngFor="let personajes of listaPersonajes" class="container">
+<div class="principal  container">
+<div *ngFor="let personajes of listaPersonajes">
   <div *ngFor="let personaje of personajes" RouterLinkActive="active" class="well well-sm">
       <a routerLink='/detalleP/{{personaje.id}}'>
       <p>{{personaje.name}}</p></a>

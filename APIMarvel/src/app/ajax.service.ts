@@ -19,7 +19,7 @@ export class AjaxService {
   llamadaApi(link){
     let offset = 0;
     let count;
-    let enlace = "http://gateway.marvel.com"+link+"?ts=1&apikey="+this.publick+"&hash="+this.hash+"&offset=0"+"&limit=100";
+    let enlace = "https://gateway.marvel.com"+link+"?ts=1&apikey="+this.publick+"&hash="+this.hash+"&offset=0"+"&limit=100";
     this.ajax.get(enlace)
       .map(response => response.json())
       .subscribe(data => {this.cargarDatos(link,data.data.total/2)},
@@ -29,8 +29,7 @@ export class AjaxService {
   cargarDatos(link,count){
     let offset = 0;
     for(offset=0;offset<count;offset = offset + 100){
-      console.log(offset);
-      let enlace = "http://gateway.marvel.com"+link+"?ts=1&apikey="+this.publick+"&hash="+this.hash+"&offset="+offset+"&limit=100";
+      let enlace = "https://gateway.marvel.com"+link+"?ts=1&apikey="+this.publick+"&hash="+this.hash+"&offset="+offset+"&limit=100";
       this.ajax.get(enlace)
       .map(response => response.json())
       .subscribe( data => {this.comics.push(data.data.results);this.datos.next(this.comics);},error=> console.log(error));

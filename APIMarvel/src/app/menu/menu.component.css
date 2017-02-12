@@ -1,0 +1,11 @@
+a{
+    color:snow !important;
+}
+
+:hover {text-decoration:underline;color: black !important}
+a:active{text-decoration:underline;color: black !important}
+
+div{
+    background: black;
+    width: 100% !important;
+}

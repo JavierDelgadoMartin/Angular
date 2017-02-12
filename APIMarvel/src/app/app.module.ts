@@ -21,6 +21,7 @@ import {AjaxService} from "./ajax.service";
 
 const appRoutes: Routes = [
   { path: '', component: PrincipalComponent },
+  { path: 'inicio', component: PrincipalComponent },
   {path: "personajes", component: PersonajesComponent},
   {path: "comics", component: ComicsComponent},
   {path: "eventos", component: EventoComponent},

@@ -13,7 +13,7 @@ export class PersonajesComponent implements OnInit {
   constructor(private servicio:AjaxService) { }
 
   ngOnInit() {
-      this.servicio.obtenerListaDatos(this.link).subscribe(data => {this.listaPersonajes = data;});
+      this.servicio.obtenerDatos(this.link).subscribe(data => {this.listaPersonajes = data;});
   }
 }
 

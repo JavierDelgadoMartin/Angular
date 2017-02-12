@@ -14,6 +14,6 @@ export class ComicsComponent implements OnInit {
   constructor(private servicio:AjaxService) { }
 
   ngOnInit() {
-    this.servicio.obtenerListaDatos(this.link).subscribe(data => {this.listaComics = data});
+    this.servicio.obtenerDatos(this.link).subscribe(data => {this.listaComics = data});
   }
 }

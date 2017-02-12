@@ -1,10 +1,8 @@
-<div class="container">
-  <div *ngFor="let personaje of listaPersonajes;let i=index">
-    <div class="card-title"><p>{{personaje.name}}</p></div>
-      <div RouterLinkActive="active">
-        <a routerLink='/detalleP/{{personaje.id}}'>
-          <img class="card-image" src={{personaje.thumbnail.path}}.{{personaje.thumbnail.extension}}>
-        </a>
-      </div>
+<div class="principal">
+<div *ngFor="let personajes of listaPersonajes" class="container">
+  <div *ngFor="let personaje of personajes" RouterLinkActive="active" class="well well-sm">
+      <a routerLink='/detalleP/{{personaje.id}}'>
+      <p>{{personaje.name}}</p></a>
   </div>
+</div>
 </div>

@@ -16,7 +16,6 @@ export class DetalleEventoComponent implements OnInit {
   ngOnInit() {
      this.route.params.subscribe(params => {this.id = params['id'];
      this.evento = this.servicio.obtenerDato(this.id);});
-     console.log(this.evento);
   }
 
 }

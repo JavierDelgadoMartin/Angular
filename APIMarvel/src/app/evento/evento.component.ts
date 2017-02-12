@@ -13,6 +13,6 @@ export class EventoComponent implements OnInit {
   constructor(private servicio:AjaxService) { }
 
   ngOnInit() {
-    this.servicio.obtenerListaDatos(this.link).subscribe(data => {this.listaEventos = data});
+    this.servicio.obtenerDatos(this.link).subscribe(data => {this.listaEventos = data});
   }
 }

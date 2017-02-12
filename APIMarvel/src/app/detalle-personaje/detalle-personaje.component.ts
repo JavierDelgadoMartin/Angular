@@ -15,7 +15,6 @@ export class DetallePersonajeComponent implements OnInit {
   constructor(private servicio:AjaxService,private route:ActivatedRoute) { }
 
   ngOnInit() {
-    console.log("mojon");
     this.route.params.subscribe(params => {this.id = params['id']});
     this.personaje = this.servicio.obtenerDato(this.id);
   }

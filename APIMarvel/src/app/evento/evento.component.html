@@ -1,11 +1,8 @@
 <div class="container">
-  <div *ngFor="let evento of listaEventos;let i=index">
-    <div class="card-title"><p>{{evento.title}}</p></div>
+  <div *ngFor="let eventos of listaEventos;">
+    <div *ngFor="let evento of eventos;">
       <div RouterLinkActive="active">
-        <a routerLink='/detalleE/{{evento.id}}'>
-          <img class="card-image" 
-               src={{evento.thumbnail.path}}.{{evento.thumbnail.extension}}>
-        </a>
+        <a routerLink='/detalleE/{{evento.id}}'>{{evento.title}}</a>
       </div>
   </div>
 </div>

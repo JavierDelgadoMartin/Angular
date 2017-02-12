@@ -1,8 +1,9 @@
 div{
-    background-color: red;
+    height: auto;
 }
 
-h1{
-    margin: 0px;
-    color: white;
+span{
+    background-image: url("../../imagenes/marvel.jpg");
+    background-size: cover; 
+    height: 100px;
 }

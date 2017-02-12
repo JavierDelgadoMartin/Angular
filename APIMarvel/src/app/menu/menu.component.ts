@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AjaxService} from "../ajax.service";
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  private activo;
-  constructor() { }
+  private clave;
+  constructor(private servicio:AjaxService) { }
 
   ngOnInit() {
   }
-
+  buscar(){
+    this.servicio.buscarDatos(this.clave);
+  }
 }

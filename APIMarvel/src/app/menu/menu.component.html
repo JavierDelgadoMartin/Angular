@@ -1,11 +1,8 @@
 <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li RouterLinkActive="active"><a [routerLink]="['/personajes']" (click)=marcarActivo(personajes)>Personajes</a></li>
+    <ul class="nav nav-tabs">
+        <li RouterLinkActive="active"><a [routerLink]="['/inicio']">Inicio</a></li>
+        <li RouterLinkActive="active"><a [routerLink]="['/personajes']">Personajes</a></li>
         <li RouterLinkActive="active"><a [routerLink]="['/comics']">Comics</a></li>
         <li RouterLinkActive="active"><a [routerLink]="['/eventos']">Eventos</a></li>
     </ul>
-</div>
-<div>
-    <input type="text">
-    <button (click)=buscar()>Buscar</button>
 </div>
